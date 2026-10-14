@@ -1,0 +1,142 @@
+
+@font-face { font-family: "Bagel"; src: url("../assets/bagel.ttf") format("truetype"); }
+:root {
+  --bg:#EAE3D7; --surface:#F7F4ED; --surface-creuse:#D9D1C3; --text:#362B1C; --text2:#61533D;
+  --line:#CDC6B7; --piste:#A9A394; --accent:#9D2821; --election:#005F53; --cachet:#008171;
+  --joie:#F2A93B;
+  --fin:4px; --serre:8px; --moyen:12px; --bloc:16px; --section:24px;
+  --rayon-carte:20px; --rayon-barre:4px;
+  --marge-reponses:32px; --marge-parole:16px;
+  --ombre: 0 3px 24px rgba(54,43,28,.08);
+  --sf: -apple-system, system-ui, sans-serif; /* @kind font */
+  --sf-rond: ui-rounded, -apple-system, system-ui, sans-serif; /* @kind font */
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #d8d2c6; }
+body { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 8px 0; font-family: var(--sf); color: var(--text); -webkit-font-smoothing: antialiased; }
+/* iPhone 15 : 393 × 852, zone sûre 59 en haut, 34 en bas */
+.ecran { position: relative; width: 393px; height: 852px; background: var(--bg); border-radius: 48px; overflow: hidden;
+  display: flex; flex-direction: column; padding: 59px 0 34px; box-shadow: 0 10px 40px rgba(0,0,0,.18); }
+.statut { position: absolute; top: 18px; left: 48px; font: 600 17px var(--sf); }
+.chrome { position: absolute; top: 77px; left: 21px; width: 44px; height: 44px; display: flex; align-items: center; color: var(--text); }
+.chrome svg { width: 13px; height: 22px; }
+.corps { flex: 1; display: flex; flex-direction: column; padding-top: 41px; padding-bottom: 124px; overflow: hidden; }
+.corps.seuil { padding-top: 0; }
+.parole { padding: 24px 32px 0; text-align: center; }
+.titre-q { font: 32px/1.12 "Bagel", var(--sf-rond); }
+.titre-s { font: 40px/1.1 "Bagel", var(--sf-rond); }
+.note { margin-top: 8px; font: 15px/1.35 var(--sf); color: var(--text2); }
+.corps-texte { font: 17px/1.35 var(--sf); color: var(--text2); }
+.reponses { padding: 24px var(--marge-reponses) 0; display: flex; flex-direction: column; gap: 8px; }
+.centre { margin: auto 0; padding-top: 24px; padding-bottom: 24px; }
+.carte { min-height: 72px; padding: 12px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--rayon-carte);
+  box-shadow: var(--ombre); display: flex; align-items: center; gap: 16px; }
+.carte.choisie { border: 2px solid var(--election); padding: 11px 15px; }
+.carte .glyphe { width: 28px; display: flex; justify-content: center; color: var(--accent); }
+.carte .glyphe svg { width: 22px; height: 22px; }
+.carte .libelle { flex: 1; font: 600 17px/1.3 var(--sf); }
+.carte .qualif { font: 17px var(--sf); color: var(--text2); }
+.carte .coche { color: var(--election); opacity: 0; width: 20px; }
+.carte.choisie .coche { opacity: 1; }
+.muette { background: var(--surface); border-radius: var(--rayon-carte); padding: 16px; box-shadow: var(--ombre); display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.muette .fait { font: 600 17px/1.35 var(--sf); }
+.muette .source { font: 17px/1.35 var(--sf); color: var(--text2); }
+.bas { position: absolute; left: 0; right: 0; bottom: 34px; padding: 16px 32px 48px; background: var(--bg);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.bouton { min-width: 200px; min-height: 60px; padding: 8px 24px; border-radius: 999px; background: var(--text); color: var(--bg);
+  font: 600 17px var(--sf-rond); display: flex; align-items: center; justify-content: center; box-shadow: var(--ombre); border: none; }
+.lien { min-height: 44px; display: flex; align-items: center; font: 600 17px var(--sf); color: var(--text); }
+.adresse { display: flex; justify-content: center; padding: 24px 16px 0; height: 258px; align-items: flex-end; }
+.adresse img { height: 234px; width: auto; }
+.pile { display: flex; flex-direction: column; gap: 12px; text-align: center; padding: 0 32px; }
+.champ { min-height: 44px; padding: 12px 16px; background: var(--surface-creuse); border-radius: var(--rayon-barre); font: 17px var(--sf); color: var(--text2); }
+
+/* Parcours d'ouverture : même identité que l'Accueil (dégradé subtil, verre, cartes sans filet) */
+.ecran.ouverture { background: radial-gradient(120% 40% at 50% 0%,rgba(242,169,59,.24),transparent 75%),linear-gradient(180deg,#EFE4D2 0%,#F7F2E9 45%,#FAF7F1 100%); }
+.ouverture .bas { background: linear-gradient(180deg,rgba(250,247,241,0),#FAF7F1 28%); }
+.ouverture .chrome { width: 44px; height: 44px; justify-content: center; border-radius: 50%; background: rgba(255,255,255,.32); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255,255,255,.65); box-shadow: inset 0 1px 1px rgba(255,255,255,.9), inset 0 -1px 1px rgba(54,43,28,.06), 0 6px 20px rgba(54,43,28,.10); }
+.ouverture .chrome svg { width: 11px; height: 18px; margin-left: -2px; }
+.ouverture .carte { border: none; border-radius: 24px; padding: 13px 17px; }
+.ouverture .carte.choisie { border: 2px solid var(--election); padding: 11px 15px; }
+.ouverture .muette { border-radius: 24px; }
+.ouverture .champ { background: var(--surface); border-radius: 24px; box-shadow: var(--ombre); padding: 12px 18px; }
+.ouverture .carte.choisie { border: 2px solid var(--election); padding: 11px 15px; }
+.ouverture .carte.choisie .coche { color: var(--election); }
+.ouverture .muette { padding: 18px; gap: 12px; }
+.ouverture .muette .source { font: 13px/1.35 var(--sf); }
+.ouverture .etiquette { font: 600 13px var(--sf-rond); color: var(--accent); }
+.ouverture .legende { display: flex; flex-direction: column; gap: 6px; font: 600 15px/1.3 var(--sf-rond); }
+.ouverture .legende span { display: flex; align-items: center; gap: 8px; }
+.ouverture .legende i { flex: none; width: 10px; height: 10px; border-radius: 50%; }
+@keyframes ouverture-montee { from { opacity: 0; transform: translateY(14px); } }
+.ouverture .reponses > *, .ouverture .reponses > div[style*="flex-wrap"] > *, .ouverture .muette { animation: ouverture-montee .5s cubic-bezier(.2,.9,.25,1) backwards; }
+.ouverture .reponses > :nth-child(2), .ouverture .reponses > div > :nth-child(2) { animation-delay: .07s; }
+.ouverture .reponses > :nth-child(3), .ouverture .reponses > div > :nth-child(3) { animation-delay: .14s; }
+.ouverture .reponses > :nth-child(4), .ouverture .reponses > div > :nth-child(4) { animation-delay: .21s; }
+.ouverture .reponses > :nth-child(5) { animation-delay: .28s; }
+.ouverture .reponses > :nth-child(6) { animation-delay: .35s; }
+.ouverture .reponses > :nth-child(7) { animation-delay: .42s; }
+.ouverture .reponses > :nth-child(n+8) { animation-delay: .49s; }
+.ouverture .muette { animation-delay: .15s; }
+@media (prefers-reduced-motion: reduce) { .ouverture * { animation: none !important; } }
+.ouverture .corps:not(.seuil) { padding-top: 65px; }
+.ouverture .corps:not(.seuil) .centre { padding-top: 0; padding-bottom: 0; }
+.ouverture .carte { min-height: 56px; }
+.ouverture .carte { height: 56px; padding: 8px 16px; }
+.ouverture .carte.choisie { padding: 7px 15px; }
+.ouverture .carte .libelle { font: 600 16px/1.15 var(--sf); text-wrap: balance; }
+.ouverture .carte .qualif { font: 15px var(--sf); }
+
+.bouton:disabled { opacity: .3; box-shadow: none; cursor: default; }
+
+/* Homogénéité de l'enchaînement : bouton principal de largeur constante, texte des écrans d'autorisation calé sous l'illustration (ne saute plus d'un écran à l'autre) */
+.ouverture .bas .bouton { min-width: 200px; }
+.ouverture .adresse + .pile.centre { margin: 0 0 auto; }
+
+/* Lémuriens : même échelle de personnage (largeur du visage ≈ 102px), pieds calés sur la même ligne, centrés sur l'axe du corps (pas de la queue) */
+img.lem{width:auto;flex:none}
+img.lem-presentation{height:234px;margin-bottom:-10px;transform:translateX(-18.2%)}
+img.lem-acquiescement{height:246px;margin-bottom:-11px;transform:translateX(-12.2%)}
+img.lem-marche{height:263px;margin-bottom:-41px;transform:translateX(-14.7%)}
+img.lem-c3-decu{height:184px;margin-bottom:0;transform:translateX(-17.5%)}
+img.lem-c4-ecoute{height:209px;margin-bottom:-3px;transform:translateX(-21.4%)}
+img.lem-c5-cadeau{height:177px;margin-bottom:0;transform:translateX(-18.3%)}
+img.lem-c6-aurevoir{height:174px;margin-bottom:-2px;transform:translateX(-14.6%)}
+img.lem-c2-oups{height:233px;margin-bottom:-2px;transform:translateX(-23.5%)}
+img.lem-i1-bonjour{height:224px;margin-bottom:-1px;transform:translateX(-13.4%)}
+
+/* Paywall : mêmes repères que l'ouverture (croix à la place du retour, Restaurer en miroir, bouton principal au même endroit) */
+button.chrome{cursor:pointer;padding:0;font:inherit}
+.ouverture .chrome.fermer{color:var(--text2)}
+.ouverture .chrome.fermer svg{width:14px;height:14px;margin:0}
+.ouverture .restaurer{position:absolute;top:77px;right:21px;height:44px;padding:0 16px;border-radius:22px;display:flex;align-items:center;font:600 15px var(--sf);color:var(--text2);cursor:pointer;background:rgba(255,255,255,.32);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(255,255,255,.65);box-shadow:inset 0 1px 1px rgba(255,255,255,.9),inset 0 -1px 1px rgba(54,43,28,.06),0 6px 20px rgba(54,43,28,.10)}
+.ouverture .bas.avec-legal{padding-bottom:0}
+.ouverture .legal{min-height:40px;display:flex;align-items:center;justify-content:center;gap:6px;font:13px var(--sf);color:var(--text2)}
+.ouverture .legal b{font-weight:400;color:var(--text)}
+.ouverture .mention{font:13px/1.4 var(--sf);color:var(--text2);text-align:center;text-wrap:balance;margin-bottom:4px;width:100%}
+.offres{display:flex;gap:10px;padding:0 24px}
+.offre{position:relative;flex:1;min-width:0;padding:22px 14px 14px;background:var(--surface);border:2px solid transparent;border-radius:24px;box-shadow:var(--ombre);cursor:pointer;display:flex;flex-direction:column;gap:2px;transition:border-color .2s}
+.offre.choisie{border-color:var(--election)}
+.offre .rond{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;color:#fff}
+.offre.choisie .rond{background:var(--election);border-color:var(--election)}
+.offre .rond svg{opacity:0}.offre.choisie .rond svg{opacity:1}
+.offre .badge-offre{position:absolute;top:-11px;left:50%;transform:translateX(-50%);padding:3px 10px;border-radius:999px;background:var(--election);color:#fff;font:600 12px var(--sf);white-space:nowrap}
+.offre .nom{font:600 16px var(--sf)}
+.offre .detail{font:13px var(--sf);color:var(--text2);white-space:nowrap}
+.offre .prix{margin-top:18px;font:22px/1.2 "Bagel",var(--sf-rond);font-variant-numeric:tabular-nums;white-space:nowrap}
+.offre .prix small{font:600 13px var(--sf);color:var(--text2)}
+
+/* Bulle du lémurien : apparition puis texte qui s'écrit (lettres pré-placées, aucune reflow) */
+@keyframes bulle-pop{0%{opacity:0;transform:translateY(8px) scale(.94)}70%{transform:translateY(-2px) scale(1.01)}100%{opacity:1;transform:none}}
+@keyframes lem-hop{40%{translate:0 -10px}}
+.bulle.pop{animation:bulle-pop .45s cubic-bezier(.2,.9,.3,1) both!important;transform-origin:50% 100%}
+.bulle .l{opacity:0;transition:opacity .12s}.bulle .l.v{opacity:1}
+img.lem.hop{animation:lem-hop .45s cubic-bezier(.3,1.6,.5,1)}
+
+/* Ombre au sol sous Maki (ancre les pieds, remplace le trait) */
+.ombre-maki,.adresse::before,.sol::before{flex:none;width:128px;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(54,43,28,.24),rgba(54,43,28,.09) 60%,rgba(54,43,28,0))}
+.adresse,.sol{position:relative}.adresse::before,.sol::before{content:"";position:absolute;left:50%;bottom:-7px;margin-left:-64px}
+/* Maki déçu : l'ombre se pose sous les fesses, la queue passe devant */
+img.lem-c3-decu{position:relative;z-index:1}
+.lem-c3-decu+.ombre-maki{width:104px;transform:translate(-14px,-22px)}
+.sol:has(.lem-c3-decu)::before{width:104px;margin-left:-66px;bottom:15px}

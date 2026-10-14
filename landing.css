@@ -1,0 +1,79 @@
+/* landing v8 · mise en page (les écrans viennent de assets/vitrine.css) */
+.demo{position:relative;overflow:hidden;background:var(--creme)}
+.demo .cadre{width:min(1240px,100% - 64px)}
+.demo-g{display:grid;grid-template-columns:minmax(0,1fr);grid-template-areas:"top" "cta" "vis";justify-items:center;text-align:center;padding:120px 0 72px}
+.demo-top{grid-area:top;display:flex;flex-direction:column;align-items:center}
+.demo h1{max-width:14ch!important;margin-inline:auto}.demo-chapo{margin-inline:auto}
+.icone-app{display:block;margin-inline:auto;width:128px;height:128px;border-radius:29px;margin-bottom:28px;box-shadow:0 1px 0 rgba(255,255,255,.4) inset,0 18px 40px -12px rgba(157,40,33,.45),0 4px 12px rgba(54,43,28,.12)}
+.badge{display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 14px 0 5px;border-radius:17px;background:var(--surface);border:1px solid var(--line);font:600 14px var(--sf-rond);color:var(--text2)}.badge img{width:24px;height:24px;border-radius:7px}
+.demo h1{margin-top:22px;font:clamp(52px,6vw,96px)/1 "Bagel",var(--sf-rond);max-width:11ch;text-wrap:balance}.demo h1 em{font-style:normal;color:var(--accent);white-space:nowrap}
+.demo-chapo{margin-top:22px;font:21px/1.45 var(--sf);color:var(--text2);max-width:30ch;text-wrap:pretty}
+.demo-cta{grid-area:cta;margin-top:36px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap}
+.demo-vis{grid-area:vis;margin-top:64px;width:440px;max-width:100%;display:flex;flex-direction:column;align-items:center;position:relative;isolation:isolate}
+.demo-vis:before{content:"";position:absolute;left:-40%;right:-40%;top:15%;bottom:-5%;z-index:-1;background:radial-gradient(closest-side,rgba(242,169,59,.22),rgba(242,169,59,0));pointer-events:none}
+.jr{list-style:none;position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;width:100%;padding:4px;border-radius:999px;background:rgba(60,40,20,.06);box-shadow:inset 0 0 0 1px rgba(60,40,20,.05)}
+.jr-fill{display:none}
+
+.jr li{display:flex;--p:0}.jr button{all:unset;position:relative;flex:1;cursor:pointer;text-align:center;font:600 13px/1 var(--sf-rond);color:#A99E8C;white-space:nowrap;padding:10px 4px 11px;border-radius:999px;overflow:hidden;transition:color .3s,background .35s,box-shadow .35s}
+.jr button:after{content:"";position:absolute;left:30%;right:30%;bottom:4px;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(var(--p));transform-origin:0 50%;opacity:0;transition:opacity .3s}
+.jr li.passe button{color:var(--text2)}
+.jr li.on button{color:var(--text);background:#fff;box-shadow:0 1px 2px rgba(60,40,20,.08),0 4px 12px rgba(60,40,20,.08)}.jr li.on button:after{opacity:1}
+.jr button:hover{color:var(--text)}.jr button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.jr{margin-bottom:24px}.caps{position:relative;width:100%;height:76px;margin-bottom:20px}
+.cap{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;pointer-events:none;opacity:0;transform:translateY(8px);transition:opacity .4s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.cap.on{opacity:1;transform:none}
+.demo .ph{--s:.82}
+@media (max-width:1000px){
+.demo-g{padding:100px 0 56px}
+.demo-top{align-self:auto}.icone-app{margin-inline:auto;width:104px;height:104px;border-radius:24px}.demo h1,.demo-chapo{margin-inline:auto}
+.demo-vis{width:min(400px,100%);margin-top:40px}
+.cap{text-align:center}
+.demo .ph{--s:.7}
+.demo-cta{display:none}
+}
+@media (max-width:420px){.demo .ph{--s:.62}.demo h1{font-size:42px}.demo-chapo{font-size:17px}.jr button{font-size:11px;padding:9px 2px 10px}.cap{font-size:18px}}
+@media (prefers-reduced-motion:reduce){.demo *,.demo *:before{transition-duration:.01ms!important;animation:none!important}}
+
+.vt .h-lock{background:var(--wall)}
+.h-date{position:absolute;top:74px;left:0;right:0;text-align:center;font:600 20px -apple-system,system-ui,sans-serif;color:rgba(255,255,255,.92)}
+.h-hr{position:absolute;top:96px;left:0;right:0;text-align:center;font:600 94px/1 ui-rounded,-apple-system,system-ui,sans-serif;letter-spacing:-1px;color:rgba(255,255,255,.95)}
+.vt .h-nt{top:262px;opacity:0;transform:translateY(-70px) scale(.94);transition:opacity .35s,transform .8s cubic-bezier(.2,1.3,.4,1)}.vt .h-nt.vu{opacity:1;transform:none}
+.vt .h-vieux{top:372px;opacity:.8;transform:scale(.96);transition:none}.vt .h-nt.vu~.h-vieux{top:372px}
+.vt .h-app{background:linear-gradient(180deg,#F5E2C3 0%,#FAF7F1 34%)}.vt .h-app .sb{color:#362B1C}.vt .h-app .hb{background:#362B1C;opacity:.35}
+.cel{position:absolute;left:73px;top:150px;width:189.75px;height:299.6px;transform:scale(1.3);transform-origin:0 0}
+.cel-img,.cel-bras{position:absolute;left:0;top:0;width:189.75px;height:122.1px}.cel-img{z-index:0}.cel-bras{z-index:2;background:url(assets/accueil-g2-bras.webp) 0 0/100% 100%}
+.cel-rond{position:absolute;left:0;top:109.9px;width:189.75px;height:189.75px;z-index:1;transition:transform .35s cubic-bezier(.3,1.6,.5,1)}.cel-rond svg{position:absolute;inset:0}.cel-rond.pop{transform:scale(1.06)}
+.cel-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#362B1C}
+.cel-a{font:600 13px ui-rounded,system-ui,sans-serif;color:var(--accent)}.cel-n{font:700 44px/1 ui-rounded,system-ui,sans-serif;font-variant-numeric:tabular-nums;margin:4px 0;white-space:nowrap}.cel-s{font:600 13px ui-rounded,system-ui,sans-serif;color:#61533D;white-space:nowrap}
+.h-serie{position:absolute;top:572px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;background:#fff;box-shadow:0 4px 14px rgba(54,43,28,.12);font:700 19px ui-rounded,system-ui,sans-serif;color:#362B1C;white-space:nowrap;transition:transform .4s cubic-bezier(.3,1.6,.5,1)}.h-serie svg{fill:var(--accent);width:18px;height:18px}.h-serie.pop{transform:translateX(-50%) scale(1.12)}
+.h-conf{position:absolute;inset:0;pointer-events:none;z-index:5}.h-conf i{position:absolute;display:block}
+.vt .h-cal{background:#FAF7F1}.cal-f{position:absolute;left:0;top:0;width:393px;height:852px;border:0;pointer-events:none}
+.wg-serie{position:absolute;left:38px;top:60.5px;width:19px;height:16px;background:#FDFBF6;font:700 12.4px/16px ui-rounded,-apple-system,system-ui,sans-serif;color:#362B1C;letter-spacing:-.1px;z-index:1}
+
+.cel-bulle{position:absolute;left:24px;right:24px;top:62px;z-index:3;display:flex;justify-content:center;opacity:0;transform:translateY(8px) scale(.96);transform-origin:50% 100%;transition:opacity .3s,transform .4s cubic-bezier(.3,1.5,.5,1);pointer-events:none}.cel-bulle.on{opacity:1;transform:none}.cel-bulle p{position:relative;padding:12px 18px;border-radius:22px;background:var(--surface);box-shadow:0 3px 24px rgba(54,43,28,.08);font:400 16px/1.35 ui-rounded,system-ui,sans-serif;color:#362B1C;text-align:center;text-wrap:balance}.cel-bulle p::after{content:"";position:absolute;left:50%;bottom:-8px;width:18px;height:18px;margin-left:-9px;background:var(--surface);transform:rotate(45deg);border-radius:0 0 5px 0}.cel-bulle b{font-weight:600}
+.vt .apps .mora{background:url(assets/icone-apercu.webp) center/cover}
+.cap-t{font:600 20px/1.25 var(--sf-rond);color:var(--text);text-wrap:balance}.cap-x{font:15px/1.4 var(--sf);color:var(--text2);max-width:34ch;text-wrap:balance}
+@media (max-width:420px){.caps{height:84px}.cap-t{font-size:18px}}
+/* typo harmonisée · 3 familles : Bagel (titres), SF Rounded (interface, 600), SF (texte, 400) · échelle 13 / 15 / 17 / 20 / display */
+.logo{font-size:28px}
+.nav-lien,.langue button,.badge,.android{font:600 15px/1.2 var(--sf-rond)}
+.langue button{font-size:14px}
+.demo h1{font:clamp(44px,6.2vw,92px)/1.02 "Bagel",var(--sf-rond);letter-spacing:-.005em}
+.demo-chapo{font:clamp(18px,1.5vw,21px)/1.45 var(--sf);color:var(--text2);max-width:32ch}
+.store{font:600 17px/1.2 var(--sf-rond)}.store small{font:500 13px/1.15 var(--sf)}
+.jr button{font:600 14px/1 var(--sf-rond)}
+.cap-t{font:600 clamp(19px,1.6vw,21px)/1.25 var(--sf-rond);letter-spacing:-.01em}
+.cap-x{font:400 16px/1.45 var(--sf);color:var(--text2);max-width:36ch}
+.caps{height:84px}
+.pied nav a{font:500 15px var(--sf)}
+.pied .bas-pied{font:400 13px/1.45 var(--sf)}
+@media (max-width:1000px){.demo .cadre{width:min(1240px,100% - 40px)}}
+@media (max-width:420px){.demo h1{font-size:44px}.demo-chapo{font-size:18px}.jr button{font-size:13px;padding:10px 2px 11px}.cap-t{font-size:19px}.cap-x{font-size:15px}.caps{height:92px}.badge{font-size:14px}}
+
+.son-demo{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:20px;padding:0 18px 0 14px;border-radius:22px;border:1px solid var(--line);background:var(--surface);color:var(--text2);font:600 15px/1 var(--sf-rond);cursor:pointer;transition:color .2s,border-color .2s}.son-demo:hover{color:var(--text)}.son-demo:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.son-demo .onde{opacity:0;transition:opacity .2s}.son-demo .s-on{display:none}.son-demo.on{color:var(--text);border-color:var(--text)}.son-demo.on .onde{opacity:1}.son-demo.on .s-on{display:inline}.son-demo.on .s-off{display:none}
+.vt .h-nt .nt-h{align-items:baseline;gap:8px}.vt .h-nt .nt-h b{min-width:0;overflow:hidden;text-overflow:ellipsis;font:600 15px/1.3 -apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#1d1813}.vt .h-nt .nt-h>span{flex:none;font:400 13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}.vt .h-nt .x{margin-top:1px}
+.faq-site{padding:72px 0 0}.faq-c{width:min(680px,100% - 40px)}.faq-titre{font:clamp(32px,3.6vw,44px)/1.05 "Bagel",var(--sf-rond);text-align:center;margin-bottom:28px}.faq-l{border-top:1px solid var(--line)}.faq-l details{border-bottom:1px solid var(--line)}.faq-l summary{list-style:none;cursor:pointer;position:relative;min-height:60px;display:flex;align-items:center;padding:16px 40px 16px 0;font:600 17px/1.35 var(--sf-rond);color:var(--text)}.faq-l summary::-webkit-details-marker{display:none}.faq-l summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;margin-top:-6px;border-right:2px solid var(--text2);border-bottom:2px solid var(--text2);transform:rotate(45deg);transition:transform .2s}.faq-l details[open] summary::after{transform:rotate(225deg);margin-top:-1px}.faq-l summary:hover{color:var(--accent)}.faq-l summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.faq-l p{padding:0 40px 20px 0;font:400 16px/1.5 var(--sf);color:var(--text2);text-wrap:pretty}
+@media (max-width:420px){.faq-site{padding-top:56px}.faq-l summary{font-size:16px}.faq-l p{font-size:15px}}
+.badge{white-space:nowrap;height:auto;min-height:34px}
+/* ?cap=N : écran seul, figé, pour les captures App Store (ecrans/70-appstore-planche.html) */
+.capture body{background:transparent!important;overflow:hidden!important}.capture .entete,.capture .demo-top,.capture .demo-cta,.capture .jr,.capture .caps,.capture .son-demo,.capture section:not(.demo),.capture .pied{display:none!important}.capture .demo .ph{--s:1!important;position:fixed!important;left:0!important;top:0!important;margin:0!important}.capture .vt .ph-in{border-radius:0!important;box-shadow:none!important}.capture .vt .ile{display:none}.capture .nt-h b{overflow:visible!important;text-overflow:clip!important}
