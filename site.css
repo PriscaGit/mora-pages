@@ -226,8 +226,6 @@ dl.fiche dd{color:var(--text2)}
 .jeu-consigne{flex-basis:100%;font:600 15px var(--sf-rond);color:var(--accent)}
 .jeu .voix-choix{margin:0;justify-content:flex-start;gap:16px}
 .jeu .voix-choix img{width:76px;height:76px}
-.son{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;margin-bottom:26px;border-radius:22px;border:1px solid var(--line);background:var(--surface);color:var(--text2);font:600 14px var(--sf-rond);cursor:pointer}
-.son .onde{opacity:0;transition:opacity .2s}.son.on{color:var(--text);border-color:var(--text)}.son.on .onde{opacity:1}
 .jeu-cta{grid-area:cta;align-items:flex-start;margin-top:36px}
 .jeu-tel{grid-area:tel;display:flex;flex-direction:column;align-items:center;gap:20px}
 .verrou{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;align-items:center;padding-top:96px;color:#FAF4EA;background:radial-gradient(90% 55% at 50% 15%,#B8402F,transparent 70%),linear-gradient(180deg,#7E1F1A,#2A1A14);transition:transform .55s cubic-bezier(.6,0,.3,1)}
@@ -240,7 +238,7 @@ dl.fiche dd{color:var(--text2)}
 .vitre .notif-ios.part{opacity:0;transform:translateY(-240px) scale(.9);transition:transform .55s cubic-bezier(.6,0,.3,1),opacity .4s .15s}
 .rejouer{display:flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:0;border-radius:22px;background:transparent;color:var(--text2);font:600 14px var(--sf-rond);cursor:pointer}
 .rejouer:hover{background:var(--surface);color:var(--text)}
-@media (max-width:900px){.jeu{text-align:center}.jeu-g{grid-template-columns:1fr;grid-template-areas:"titre" "tel" "choix" "cta";grid-template-rows:auto;padding-top:104px}.jeu-titre{align-items:center}.jeu h1,.jeu .chapo{margin:0 auto}.jeu-tel{margin-top:40px}.jeu-choix{justify-content:center;margin-top:24px}.jeu .voix-choix{justify-content:center}.jeu-cta{align-items:center}.son{margin-bottom:0}}
+@media (max-width:900px){.jeu{text-align:center}.jeu-g{grid-template-columns:1fr;grid-template-areas:"titre" "tel" "choix" "cta";grid-template-rows:auto;padding-top:104px}.jeu-titre{align-items:center}.jeu h1,.jeu .chapo{margin:0 auto}.jeu-tel{margin-top:40px}.jeu-choix{justify-content:center;margin-top:24px}.jeu .voix-choix{justify-content:center}.jeu-cta{align-items:center}}
 
 /* landing v5 · défi */
 .jeu-g{grid-template-areas:". tel" "titre tel" "jeu tel" ". tel";grid-template-rows:1fr auto auto 1fr;min-height:100svh;padding-bottom:24px;align-items:start}
@@ -250,8 +248,6 @@ dl.fiche dd{color:var(--text2)}
 .jeu-g[data-phase=fete] .gagne{opacity:1;transform:none;pointer-events:auto}
 .defi-haut{display:flex;justify-content:space-between;align-items:center}
 .defi-etiq{font:600 14px var(--sf-rond);color:var(--accent);letter-spacing:.01em}
-.muet{width:44px;height:44px;margin:-10px -10px -10px 0;border:0;border-radius:50%;background:transparent;color:var(--text2);cursor:pointer;display:flex;align-items:center;justify-content:center}
-.muet:hover{background:rgba(255,255,255,.7)}.muet .barre{display:none}.muet.coupe .onde{display:none}.muet.coupe .barre{display:block}
 .compteur{display:flex;align-items:baseline;gap:10px;margin-top:6px}
 .compteur>span{font:700 clamp(64px,7vw,88px)/1 var(--sf-rond);letter-spacing:-.03em;font-variant-numeric:tabular-nums;color:var(--text);display:inline-block;transform-origin:left 80%}
 .compteur small{font:600 17px var(--sf-rond);color:var(--text2)}
@@ -314,3 +310,4 @@ dl.fiche dd{color:var(--text2)}
 .maki-f{position:relative;transform-origin:50% 100%}.maki-m .maki-f img{display:block;width:100%;height:auto;margin:0;visibility:hidden;animation:none}.maki-m .maki-f img:not(:first-child){position:absolute;left:0;bottom:0}.maki-m .maki-f img.on{visibility:visible}.maki-m .maki-f img.joie{margin-bottom:-14px}
 
 .langue a{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.logo{display:inline-flex;align-items:center}.logo-svg{display:block;height:30px;width:auto;overflow:visible}
