@@ -70,12 +70,13 @@
 @media (max-width:1000px){.demo .cadre{width:min(1240px,100% - 40px)}}
 @media (max-width:420px){.demo h1{font-size:44px}.demo-chapo{font-size:18px}.jr button{font-size:13px;padding:10px 2px 11px}.cap-t{font-size:19px}.cap-x{font-size:15px}.caps{height:92px}.badge{font-size:14px}}
 
+.son-demo{all:unset;box-sizing:border-box;display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:20px;padding:0 18px 0 14px;border-radius:22px;border:1px solid var(--line);background:var(--surface);color:var(--text2);font:600 15px/1 var(--sf-rond);cursor:pointer;transition:color .2s,border-color .2s}.son-demo:hover{color:var(--text)}.son-demo:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.son-demo .onde{opacity:0;transition:opacity .2s}.son-demo .s-on{display:none}.son-demo.on{color:var(--text);border-color:var(--text)}.son-demo.on .onde{opacity:1}.son-demo.on .s-on{display:inline}.son-demo.on .s-off{display:none}
 .vt .h-nt .nt-h{align-items:baseline;gap:8px}.vt .h-nt .nt-h b{min-width:0;overflow:hidden;text-overflow:ellipsis;font:600 15px/1.3 -apple-system,BlinkMacSystemFont,system-ui,sans-serif;color:#1d1813}.vt .h-nt .nt-h>span{flex:none;font:400 13px -apple-system,BlinkMacSystemFont,system-ui,sans-serif}.vt .h-nt .x{margin-top:1px}
 .faq-site{padding:72px 0 0}.faq-c{width:min(680px,100% - 40px)}.faq-titre{font:clamp(32px,3.6vw,44px)/1.05 "Bagel",var(--sf-rond);text-align:center;margin-bottom:28px}.faq-l{border-top:1px solid var(--line)}.faq-l details{border-bottom:1px solid var(--line)}.faq-l summary{list-style:none;cursor:pointer;position:relative;min-height:60px;display:flex;align-items:center;padding:16px 40px 16px 0;font:600 17px/1.35 var(--sf-rond);color:var(--text)}.faq-l summary::-webkit-details-marker{display:none}.faq-l summary::after{content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;margin-top:-6px;border-right:2px solid var(--text2);border-bottom:2px solid var(--text2);transform:rotate(45deg);transition:transform .2s}.faq-l details[open] summary::after{transform:rotate(225deg);margin-top:-1px}.faq-l summary:hover{color:var(--accent)}.faq-l summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}.faq-l p{padding:0 40px 20px 0;font:400 16px/1.5 var(--sf);color:var(--text2);text-wrap:pretty}
 @media (max-width:420px){.faq-site{padding-top:56px}.faq-l summary{font-size:16px}.faq-l p{font-size:15px}}
 .badge{white-space:nowrap;height:auto;min-height:34px}
 /* ?cap=N : écran seul, figé, pour les captures App Store (ecrans/70-appstore-planche.html) */
-.capture body{background:transparent!important;overflow:hidden!important}.capture .entete,.capture .demo-top,.capture .demo-cta,.capture .jr,.capture .caps,.capture section:not(.demo),.capture .pied{display:none!important}.capture .demo .ph{--s:1!important;position:fixed!important;left:0!important;top:0!important;margin:0!important}.capture .vt .ph-in{border-radius:0!important;box-shadow:none!important}.capture .vt .ile{display:none}.capture .nt-h b{overflow:visible!important;text-overflow:clip!important}
+.capture body{background:transparent!important;overflow:hidden!important}.capture .entete,.capture .demo-top,.capture .demo-cta,.capture .jr,.capture .caps,.capture .son-demo,.capture section:not(.demo),.capture .pied{display:none!important}.capture .demo .ph{--s:1!important;position:fixed!important;left:0!important;top:0!important;margin:0!important}.capture .vt .ph-in{border-radius:0!important;box-shadow:none!important}.capture .vt .ile{display:none}.capture .nt-h b{overflow:visible!important;text-overflow:clip!important}
 
 /* hero 2 colonnes sur ordi, empilé centré sur mobile */
 .demo h1{font-size:clamp(38px,4.4vw,64px)}
@@ -87,3 +88,121 @@
 }
 @media (max-width:1000px){.demo h1{font-size:clamp(34px,7vw,52px)}}
 @media (max-width:420px){.demo h1{font-size:36px}}
+
+/* v9 · niveau App Store : dégradé ambré des captures, grands titres Bagel, iPhone titane, garanties */
+.demo{background:radial-gradient(80% 900px at 50% 0%,rgba(242,169,59,.34),rgba(242,169,59,0) 75%),linear-gradient(180deg,#EFE4D2 0,#F7F2E9 900px,#FAF7F1 100%)}
+.demo-g,.demo-g:is(*){grid-template-columns:minmax(0,1fr)!important;grid-template-areas:"top" "cta" "gar" "vis"!important;justify-items:center!important;text-align:center!important;padding:150px 0 200px!important}
+.demo-top{align-items:center!important;align-self:auto!important}.demo .icone-app,.demo h1,.demo-chapo{margin-inline:auto!important}.demo-cta{justify-content:center!important;align-self:auto!important;margin-top:40px}
+.demo .badge{display:none}
+.demo .icone-app{width:120px;height:120px;border-radius:27px;margin-bottom:8px}
+.demo h1{margin-top:28px;font:clamp(48px,8.4vw,124px)/.96 "Bagel",var(--sf-rond)!important;letter-spacing:-.012em;max-width:11ch!important;color:var(--text)}
+.demo-chapo{margin-top:26px;font:500 clamp(19px,1.7vw,24px)/1.4 var(--sf-rond)!important;color:var(--text2);max-width:30ch!important}
+.store.fonce{min-height:64px;padding:8px 30px 8px 22px;box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 14px 34px -10px rgba(54,43,28,.55)}
+.garanties{grid-area:gar;list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.garanties li{display:flex;align-items:center;gap:9px;padding:11px 16px 11px 13px;border-radius:999px;background:#FBF8F2;font:700 15px/1 var(--sf-rond);color:var(--text);white-space:nowrap;box-shadow:0 0 0 1px rgba(54,43,28,.06),0 10px 24px -8px rgba(54,43,28,.22)}
+.garanties li::before{content:"";flex:none;width:9px;height:9px;border-radius:50%;background:var(--election);box-shadow:0 0 0 4px rgba(0,95,83,.15)}
+.demo-vis{width:min(980px,100%)!important;margin-top:136px!important}
+.demo-vis:before{left:-10%;right:-10%;top:20%;bottom:8%;background:radial-gradient(closest-side,rgba(242,169,59,.26),rgba(242,169,59,0))}
+.jr{width:min(540px,100%);margin-bottom:48px}
+.caps{display:grid;height:auto!important;margin-bottom:64px}
+.cap{position:relative;inset:auto;grid-area:1/1;gap:0;justify-content:flex-start}
+.cap-t{font:clamp(36px,5.4vw,72px)/1 "Bagel",var(--sf-rond)!important;letter-spacing:-.01em;color:var(--text);max-width:14ch;text-wrap:balance}
+.cap-t em,.fin-titre em{font-style:normal;color:var(--accent)}
+.cap-x{margin-top:18px;font:500 clamp(17px,1.5vw,21px)/1.4 var(--sf-rond)!important;color:var(--text2);max-width:34ch!important}
+.demo .ph{--s:.92}
+.demo .ph-in{box-shadow:0 0 0 1px rgba(0,0,0,.5),0 0 0 10px #1D1B19,0 0 0 11px #4A4642,0 0 0 12.5px #8E8780,0 0 0 13.5px #2A2724,0 50px 80px -24px rgba(54,43,28,.42),0 120px 160px -60px rgba(110,40,30,.28)}
+.faq-site{padding:136px 0 0}.faq-titre{font:clamp(40px,5.4vw,72px)/1 "Bagel",var(--sf-rond)!important;margin-bottom:48px}.faq-c{width:min(760px,100% - 40px)}
+.faq-l summary{min-height:72px;font-size:19px}.faq-l p{font-size:17px}
+.fin{padding:150px 0 110px;background:radial-gradient(70% 520px at 50% 100%,rgba(242,169,59,.26),rgba(242,169,59,0) 75%)}
+.fin-titre{font:clamp(48px,8vw,116px)/.96 "Bagel",var(--sf-rond);letter-spacing:-.012em;text-align:center;max-width:10ch;text-wrap:balance}
+.maki-fin{height:280px;margin-top:40px;filter:drop-shadow(0 14px 22px rgba(54,43,28,.18))}
+.ombre-site{width:150px;height:16px}
+.fin-c .cta{margin-top:40px}
+@media (max-width:1000px){.demo-g{padding:112px 0 80px!important}.demo-cta{display:flex!important;margin-top:32px}.demo-vis{margin-top:88px!important}.demo .ph{--s:.78}.caps{margin-bottom:44px}.jr{margin-bottom:32px}.faq-site{padding-top:96px}.fin{padding:104px 0 88px}.maki-fin{height:220px}}
+@media (max-width:420px){.demo h1{font-size:46px!important}.demo .icone-app{width:96px;height:96px;border-radius:22px}.demo .ph{--s:.7}.garanties{gap:6px}.garanties li{font-size:13px;padding:9px 12px 9px 10px;gap:7px}.cap-t{font-size:34px!important}.cap-x{font-size:16px!important}.store.fonce{min-height:58px}}
+
+/* 18 h 30 · tableau « Ma marche du jour » sous la série (valeurs de la capture App Store 05) */
+.cel{left:87px;transform:scale(1.15)}.h-serie{top:508px}
+.h-tab{position:absolute;left:16px;right:16px;top:560px;display:flex;flex-direction:column;gap:8px;z-index:1}
+.tb-h{padding:0 4px;font:700 12px var(--sf-rond);color:var(--text2);text-transform:uppercase;letter-spacing:.06em}
+.tb{border-radius:22px;background:var(--surface);box-shadow:var(--ombre);padding:4px 0}
+.tb-l{display:flex;align-items:center;gap:10px;padding:0 14px}
+.tb-i{flex:none;width:24px;text-align:center;font:19px/1 "Apple Color Emoji","Segoe UI Emoji",sans-serif}
+.tb-c{flex:1;min-width:0;display:flex;align-items:center;gap:8px;min-height:47px;box-shadow:inset 0 -1px 0 var(--line)}.tb-c.der{box-shadow:none}
+.tb-t{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:2px}.tb-t>span{font:600 14px/1.2 var(--sf-rond);color:var(--text)}.tb-t small{display:block;font:500 12px/1.2 var(--sf-rond);color:var(--text2);white-space:nowrap}
+.tb-t em{display:flex;align-items:center;gap:3px;padding:1px 7px 1px 5px;border-radius:999px;background:var(--accent);font:normal 700 11px/15px var(--sf-rond);color:var(--surface);white-space:nowrap}
+.tb-c>b{font:700 16px/1 var(--sf-rond);font-variant-numeric:tabular-nums;color:var(--text);white-space:nowrap}
+
+/* ordi : texte à gauche, iPhone à droite */
+@media (min-width:1001px){
+.demo-g,.demo-g:is(*){grid-template-columns:minmax(0,1fr) auto!important;grid-template-areas:"top vis" "cta vis" "gar vis"!important;grid-template-rows:1fr auto 1fr;column-gap:80px;align-items:start;justify-items:start!important;text-align:left!important;padding:150px 0 160px!important}
+.demo-top{align-items:flex-start!important;align-self:end!important}.demo .icone-app,.demo h1,.demo-chapo{margin-inline:0!important}
+.demo h1{font-size:clamp(56px,6.4vw,104px)!important}
+.demo-cta{justify-content:flex-start!important;align-self:start!important}.garanties{justify-content:flex-start;align-self:start}
+.demo-vis{width:460px!important;margin-top:0!important}
+.jr{margin-bottom:28px}.caps{margin-bottom:28px}
+.cap-t{font-size:34px!important}.cap-x{font-size:17px!important;margin-top:10px}
+}
+
+/* légendes de la démo : SF Rounded (pas Bagel, réservé au titre du haut) */
+.cap-t{font:700 clamp(26px,3vw,40px)/1.12 var(--sf-rond)!important;letter-spacing:-.02em}
+@media (min-width:1001px){.cap-t{font-size:28px!important}}
+@media (max-width:420px){.cap-t{font-size:24px!important}}
+.cap-t em{color:inherit}
+
+/* v10 · espacements globaux : une échelle unique (8 · 12 · 20 · 32 · 48 · section), mobile et ordi */
+:root{--e-sec:clamp(88px,10vw,144px);--e-haut:clamp(104px,11vw,148px)}
+.demo-g,.demo-g:is(*){padding:var(--e-haut) 0 var(--e-sec)!important}
+.demo .icone-app{margin-bottom:0}
+.demo h1{margin-top:28px!important}
+.demo-chapo{margin-top:20px!important}
+.demo-cta{margin-top:32px!important;gap:12px 24px}
+.android{white-space:nowrap}
+.garanties{margin-top:20px!important}
+.demo-vis{margin-top:72px!important}
+.jr{margin-bottom:32px!important}
+.cap-x{margin-top:12px!important}
+.caps{margin-bottom:40px!important}
+.faq-site{padding:0!important}
+.faq-titre{margin-bottom:32px!important}
+.fin{padding:var(--e-sec) 0 calc(var(--e-sec) * .75)!important}
+.maki-fin{margin-top:32px!important}
+.fin-c .cta{margin-top:32px!important}
+.pied{padding-bottom:32px}
+@media (min-width:1001px){
+.demo-g,.demo-g:is(*){grid-template-rows:auto auto 1fr!important;column-gap:clamp(56px,7vw,112px)!important;align-items:start!important}
+.demo-top{align-self:start!important;padding-top:56px}
+.demo-vis{margin-top:0!important}
+.jr{margin-bottom:24px!important}.caps{margin-bottom:28px!important}
+}
+@media (max-width:1000px){.demo-vis{margin-top:64px!important}}
+@media (max-width:600px){
+:root{--e-sec:80px;--e-haut:96px}
+.demo h1{margin-top:20px!important}.demo-chapo{margin-top:16px!important}.demo-cta{margin-top:28px!important;flex-direction:column}
+.garanties{margin-top:16px!important}.demo-vis{margin-top:56px!important}
+.jr{margin-bottom:24px!important}.caps{margin-bottom:32px!important}
+.faq-titre{margin-bottom:24px!important}.maki-fin{margin-top:24px!important;height:200px}.fin-c .cta{margin-top:24px!important}
+}
+/* le bloc gauche centré sur l'iPhone (décision de Prisca du 2026-10-16) : la première rangée réserve la frise et la légende, qui ont des hauteurs fixes */
+@media (min-width:1001px){.demo-g,.demo-g:is(*){grid-template-areas:". vis" ". vis" "top vis" "cta vis" "gar vis" ". vis"!important;grid-template-rows:227px 1fr auto auto auto 1fr!important}.demo-top{padding-top:0}}
+.garanties{max-width:100%}
+
+/* v11 · échelle typographique unique (mobile → ordi)
+   Affiche  Bagel   44 → 88  : titre du haut, titre de fin
+   Section  Bagel   34 → 52  : Questions fréquentes
+   Titre 3  Rounded 700 24 → 28 : légendes de la démo
+   Chapô    Rounded 500 17 → 19 : chapô, texte des légendes
+   Corps    17 : questions (Rounded 600), réponses (SF 400)
+   Interface Rounded 600–700 15 : nav, frise, garanties, Android, liens du pied
+   Note     13 : langue, « Télécharger Mora sur », mentions */
+:root{--t-affiche:clamp(44px,6vw,88px);--t-section:clamp(34px,3.8vw,52px);--t-titre3:clamp(24px,2vw,28px);--t-chapo:clamp(17px,1.4vw,19px)}
+.demo h1,.fin-titre{font:var(--t-affiche)/.98 "Bagel",var(--sf-rond)!important;letter-spacing:-.01em}
+.faq-titre{font:var(--t-section)/1.05 "Bagel",var(--sf-rond)!important;letter-spacing:-.005em}
+.cap-t,.cap-t:is(*){font:700 var(--t-titre3)/1.15 var(--sf-rond)!important;letter-spacing:-.02em}
+.demo-chapo,.cap-x{font:500 var(--t-chapo)/1.45 var(--sf-rond)!important}
+.faq-l summary{font:600 17px/1.35 var(--sf-rond)!important}.faq-l p{font:400 17px/1.5 var(--sf)!important}
+.nav-lien,.jr button,.garanties li,.android,.pied nav a{font-size:15px!important}
+.jr button{font-weight:600}.garanties li{font-weight:600}.pied nav a{font-weight:500}
+.langue a,.langue button,.store small,.pied .bas-pied{font-size:13px!important}
+.store{font-size:17px!important}
+@media (max-width:420px){.demo h1{font-size:40px!important}.fin-titre{font-size:44px!important}.garanties li{font-size:13px!important}.jr button{font-size:13px!important}}
